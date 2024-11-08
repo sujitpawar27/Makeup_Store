@@ -1,0 +1,76 @@
+.HomeContainer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+  }
+  
+  .App-header {
+    background-color: #5a5f74;
+    padding: 20px;
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+.product button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product button:hover {
+    background-color: #f81669;
+  }
+  
+  .product button:active {
+    background-color: #f81669;
+    transform: scale(0.98);
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .product {
+    position: relative;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-filter {
+    margin-bottom: 20px;
+  }
+  
+  .category-filter button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .category-filter button:hover {
+    background-color: #ddd;
+  }
+  
+  .category-filter button.active {
+    background-color: #f81669;
+    color: white;
+  }
+  
