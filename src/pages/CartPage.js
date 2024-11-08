@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom"; 
 import "./cart.css";
 
 const CartPage = ({ cart, setCart }) => {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    setCart(cartItems);
-  }, []);
 
   const removeFromCart = (id) => {
     const updatedCart = cart.filter((item) => item.id !== id);
