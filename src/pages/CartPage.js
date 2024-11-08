@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "./cart.css";
 
-const CartPage = () => {
-  const [cart, setCart] = useState([]);
+const CartPage = ({ cart, setCart }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -89,7 +88,7 @@ const CartPage = () => {
               </button>
             </div>
           ))}
-          <button className="place-order-btn" onClick={goToOrderPage}>
+          <button className="place-order" onClick={goToOrderPage}>
             Place Order
           </button>
         </div>

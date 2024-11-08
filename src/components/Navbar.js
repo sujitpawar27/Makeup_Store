@@ -3,13 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaShoppingCart } from 'react-icons/fa';
 import './navbar.css';
 
-const Navbar = () => {
-  const [cartCount, setCartCount] = useState(0);
-
-  useEffect(() => {
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    setCartCount(cartItems.length);
-  }, []);
+const Navbar = ({ cartCount }) => {
 
   return (
     <nav className="navbar">

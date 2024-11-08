@@ -3,7 +3,7 @@ import axios from "axios";
 import "./HomePage.css";
 import ProductCard from "../components/ProducCard";
 
-const HomePage = () => {
+const HomePage = ({ onAddToCart }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [categories] = useState([
@@ -21,7 +21,7 @@ const HomePage = () => {
         setFilteredProducts(response.data);
       })
       .catch((error) => console.error("Error fetching data: ", error));
-  }, []);
+    }, []);
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -35,11 +35,6 @@ const HomePage = () => {
       
       setFilteredProducts(filtered);
     }
-  };
-
-  const addToCart = (product) => {
-    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-    localStorage.setItem("cart", JSON.stringify([...existingCart, product]));
   };
 
   return (
@@ -65,7 +60,7 @@ const HomePage = () => {
         {filteredProducts.map((product) => (
           <div key={product.id} className="product">
             <ProductCard key={product.id} product={product} />
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
+            <button onClick={() => onAddToCart(product)}>Add to Cart</button>
           </div>
         ))}
       </div>
